@@ -1,0 +1,6 @@
+a.target:hover {text-decoration: none;}
+a[rel="term"] {
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
+}

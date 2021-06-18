@@ -1,0 +1,95 @@
+table {
+    table-layout: fixed;
+}
+
+td {
+    border: 0;
+    padding: 0;
+    vertical-align: top;
+    overflow: hidden;
+    clear: both;
+}
+
+td.l1, td.l2 {
+    padding-right: 0.357em;
+}
+td.sg.l1, td.sg.l2 {
+    padding-bottom: 0.25em;
+}
+
+div.lvl, div.lvl>div {background:0;}
+div.lvl {
+    width: 0.643em;
+    float: left;
+    display: inline;
+    padding-bottom: 500em;
+    margin-bottom: -500em;
+}
+
+table.tree * div.lvl>div,
+div.lvl.nodot>div {
+    color: transparent;
+}
+table.tree * div.lvl.dot-n,
+table.tree * div.lvl.dot-1,
+table.tree * div.lvl.dot_last {
+    /* tree vertical line */
+    background: transparent url("../img/dot-n.png") repeat-y scroll 0.143em top;
+}
+table.tree * div.lvl.dot-1>div {
+    /* tree horizontal line */
+    background: transparent url("../img/dot-1.png") no-repeat scroll 0.143em 0.786em;
+}
+table.tree * td.cpc * div.lvl.dot_last>div {
+    /* tree terminal dot with CPC color vertical mask above */
+    background: transparent url("../img/dot_last_cpc.png") no-repeat scroll left -0.08em;
+}
+table.tree * td.fi * div.lvl.dot_last>div {
+    /* tree terminal dot with FI color vertical mask above */
+    background: transparent url("../img/dot_last_fi.png") no-repeat scroll left -0.08em;
+}
+table.tree * div.lvl.dot_last>div {
+    /* tree terminal dot with white vertical mask above */
+    background: transparent url("../img/dot_last.png") no-repeat scroll left top;
+}
+table.tree * div.lvl.dot_last.no_child,
+table.tree * div.lvl.dot-n.last_child,
+table.tree * div.lvl.dot-1.last_child>div {
+    background: 0;
+}
+table.tree * div.lvl.dot_last.no_child>div {
+    /* tree terminal dot */
+    background: transparent url("../img/dot_last_no_child.png") no-repeat scroll left 0.643em;
+}
+table.tree * div.lvl.dot-1.last_child {
+    /* tree vertical + horizontal lines */
+    background: transparent url("../img/dot-1_last_child.png") no-repeat scroll 0.143em top;
+}
+/* Note in tree: */
+table.tree * div.lvl.nodot.dot_last>div,
+table.tree * div.lvl.nodot.dot-1.last_child,
+table.tree * div.lvl.nodot.dot-1>div {
+    background:0;
+}
+
+div.txt {
+    float: none;
+    display: block;
+    width: auto;
+    padding-bottom: 500em;
+    margin-bottom: -500em;
+}
+div.lvl1 {margin-left: 0.643em;}
+div.lvl2 {margin-left: 1.286em;}
+div.lvl3 {margin-left: 1.929em;}
+div.lvl4 {margin-left: 2.572em;}
+div.lvl5 {margin-left: 3.215em;}
+div.lvl6 {margin-left: 3.858em;}
+div.lvl7 {margin-left: 4.501em;}
+div.lvl8 {margin-left: 5.144em;}
+div.lvl9 {margin-left: 5.787em;}
+div.lvl10 {margin-left: 6.43em;}
+div.lvl11 {margin-left: 7.073em;}
+div.lvl12 {margin-left: 7.716em;}
+div.lvl13 {margin-left: 8.359em;}
+div.lvl14 {margin-left: 9.002em;}

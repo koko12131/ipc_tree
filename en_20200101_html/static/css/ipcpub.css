@@ -1,0 +1,833 @@
+
+#search, #rcl, #compilation, #catchword,
+#advanced, #xrefsTab, #xrefsOptions, #statsTab, #statsOptions, #ipccatTab, #ipccatOptions,
+#ipccat_help, #fullResult,
+span.cpcfi, td.l2, td.w, td.w>* {
+    display: none;
+}
+
+ul.nav.nav-tabs * .popover{
+    max-width: 150px;
+    width: <width>;
+}
+
+ul.nav.nav-tabs.nav-stacked {
+    padding-left: 0px;
+}
+
+span.ss-delete {font-size: 1.1rem;}
+
+#maintenance p {
+    text-align:center;
+    font-size: 2em;
+}
+
+table.fancytree-ext-table>tbody>tr>td {
+    border: 0 none transparent;
+}
+
+table.fancytree-ext-table>tbody>tr>td.s,
+table.fancytree-ext-table>tbody>tr>td.t {
+    border-top: 15px solid #FAFAFA;
+    border-bottom: 10px solid #FAFAFA;
+}
+
+table.fancytree-ext-table>tbody>tr>td.c,
+table.fancytree-ext-table>tbody>tr>td.u,
+table.fancytree-ext-table>tbody>tr>td.m,
+table.fancytree-ext-table>tbody>tr>td.g {
+    border-top: 5px solid #FAFAFA;
+}
+table.fancytree-ext-table>tbody>tr>td.me {
+    margin-top: 4px;
+    border-top: 1px solid #405176;
+}
+
+div.container {
+    max-width: none;
+}
+
+wipo-navbar {
+    position:fixed;
+    left:0px;
+    margin:0;
+    z-index: 256;
+    top:0px;
+    width: 100%;
+}
+
+div.notion-options {
+    position:fixed;
+    left:0px;
+    margin:0;
+    z-index: 255;
+    top:48px;
+    height:calc(100% - 100px);
+    width:191px;
+    padding:0px 8px 0px 4px;
+    background-color: #EAEDEC;
+}
+
+div.notion-options > div.tab-content {
+    height: calc(100% - 35px);
+    overflow: auto;
+}
+
+div.notion-options > ul.nav {
+    margin-bottom: 0;
+}
+
+.nav-tabs > li > a.ss-rows {
+    padding-bottom: 6px;
+}
+
+div.options-btn {
+    padding-top: 0.5em;
+}
+
+label > a.ipc, label > a.download {
+    font-size: 10px;
+    padding-top: 0.5em;
+}
+
+form.symbol-search {
+    margin-bottom: 0.7em;
+}
+
+p.versions {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    position:fixed;
+    left:0px;
+    margin:0;
+    z-index: 1;
+    bottom: 0px;
+    width:191px;
+    padding:0px 8px 0px 4px;
+    background-color: #EAEDEC;
+}
+
+div#notions {
+    margin-top: 90px; /* Should ideally be 10px more than scrollTop() threshold of $(window).scroll */
+    margin-left: 191px;
+}
+
+/* Notion tabs position to be fixed under top banner or at top of window */
+div#notions>ul {
+    position:fixed;
+    top:48px;
+    width: 100%;
+    background: #FAFAFA none repeat scroll 0% 0%;
+}
+
+/* Common styles */
+hr {
+    margin: 5px;
+}
+input.search-query {
+    margin-bottom: 10px;
+}
+#currentSymbol {
+    padding: 0.45em 12px;
+}
+#pdfBtn, #compilationPdfBtn, #rclPdfBtn, .ss-rows, .ss-home, .ss-redirect, .ss-search, .ss-refresh, .ss-grid {
+    padding: 0.45em 15px;
+}
+#currentSymbol {
+    color: #72b905;
+    font-weight: bold;
+}
+textarea.result-detail {
+    height: 80px;
+}
+#ipccat_help {
+    margin-top: 10px;
+}
+div#menu-button {
+    text-align: left;
+}
+form.versions, form#gotoSymbol {
+    margin-bottom: 5px;
+}
+form.versions>label>select {
+    width: 100px;
+}
+select#ipcCatNbPredict {
+    width: 40px;
+}
+select#ipcCatLevel {
+    width: 70px;
+}
+select#ipcCatLang {
+    width: 80px;
+}
+div#search-result, div#search-result-detail {
+    display: none;
+}
+form#search-form {
+    margin-bottom: 0px;
+}
+div#sections {
+    margin-bottom: 0px;
+}
+#schemeTab a, #rclTab a, #compilationTab a, #catchwordTab a {
+    font-weight: bold;
+}
+
+/* FancyTree styles */
+
+/* Scheme */
+
+table#tabletree {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* IPC Section selected row cell background and text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.s,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.s {
+    background-color: inherit;
+    color: #A23B39;
+}
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover.fancytree-active > td.s>a.symbol,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.s>a.symbol {
+    background-color: inherit;
+}
+td.s {
+    color: #A23B39;
+    font-size: 1.6rem;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+/* IPC SubSection selected row cell background and text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.t,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.t {
+    background-color: inherit;
+    color: #A23B39;
+}
+td.t {
+    color: #A23B39;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+    vertical-align: top;
+}
+
+/* IPC Class selected row cell background and text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.c,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.c {
+    background-color: #DAB2B1;
+    color: black;
+}
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover.fancytree-active > td.c>a.symbol,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.c>a.symbol {
+    background-color: #DAB2B1;
+}
+td.c {
+    background-color: #DAB2B1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+/* IPC SubClass selected row cell background and text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.u,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.u {
+    background-color: #E7CFCF;
+    color: black;
+}
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover.fancytree-active > td.u>a.symbol,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.u>a.symbol {
+    background-color: #E7CFCF;
+}
+td.u {
+    background-color: #E7CFCF;
+    font-weight: bold;
+    font-size: 1.5rem;
+    vertical-align: top;
+}
+td.u>div>span {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+/* IPC Subclass Index */
+td.i {
+    padding-top: 10px;
+    font-size: 1.4rem;
+}
+td.i tr>td {
+    padding-right: 5px;
+}
+td.i th {
+    text-align: left;
+    text-decoration: underline;
+}
+td.i td.h {
+    font-weight: bold;
+}
+
+/* IPC Guidance Heading */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.g,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.g {
+    background-color:inherit;
+    color: #A23B39;
+}
+td.g {
+    color: #A23B39;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: underline;
+    vertical-align: top;
+}
+
+/* IPC MainGroup selected row cell background and text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.m,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.m,
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.me,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.me {
+    background-color: #EFE0E0;
+    color: black;
+}
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover.fancytree-active > td.m>a.symbol,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.m>a.symbol,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover.fancytree-active > td.me>a.symbol,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.me>a.symbol {
+    background-color: #EFE0E0;
+}
+td.m, td.me {
+    background-color: #EFE0E0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    vertical-align: top;
+}
+td.m>div>span, td.me>div>span {
+    font-weight: normal;
+}
+
+/* IPC SubGroup selected row cell background and text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.sg,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.sg {
+    background-color:inherit;
+    color: black;
+}
+.sg {
+    font-size: 1.4rem;
+    vertical-align: top;
+}
+
+/* Deleted and Changed entry */
+.D, .C, .N, .T {
+    font-size: 1.4rem;
+    vertical-align: top;
+    font-style: italic;
+}
+
+td>a.symbol {
+    color: #000000;
+    font-size: 1.4rem;
+    display: block;
+}
+
+td.static {
+    padding-left: 20px;
+}
+
+/* IPC Notes selected row cell background and text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.n,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.n {
+    background-color:inherit;
+    color: black;
+}
+td.n * {
+    font-size: 1.4rem;
+}
+td.n>div {
+    padding-left: 0;
+}
+td.n * p {
+    margin-bottom: 0;
+}
+
+ul {margin-top: 0;list-style-type:disc;}
+ul.none   {list-style-type: none;}
+ul.table  {list-style-type: square;}
+ul.bullet  {list-style-type: disc;}
+ul.number {list-style-type: decimal;}
+ul.Roman  {list-style-type: upper-roman;}
+ul.roman  {list-style-type: lower-roman;}
+ul.Alpha  {list-style-type: upper-alpha;}
+ul.alpha  {list-style-type: lower-alpha;}
+
+div>ul  {margin-left: 1.5em; margin-bottom: 0;}
+
+ul.none>li>ul>li {
+    text-indent: 0;
+    padding: 0;
+}
+
+/* IPC Definitions selected row cell background and text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.f,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.f {
+    background-color:inherit;
+    color: black;
+}
+
+/* Indexing Symbol icon:*/
+td.idx>a.symbol {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 123px;
+    max-width: 123px;
+    max-height: 19px;
+    min-height: 19px;
+    padding: 0px;
+    border: 1px solid #405176;
+    margin: 0px;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+/*td.idx>a.symbol.current {
+    color: #FAFAFA;
+    background-color: #892220;
+}*/
+
+span.cpcfi {
+    font-size: 1rem;
+}
+
+td.cpcfiC>span, td.cpcfiB>span, label#showCPC {
+    background-color: #FFCE8F;
+}
+
+td.cpcfiC>span::before {
+    content: "\00a0 C\00a0";
+}
+
+td.cpcfiB>span::before {
+    content: "\00a0 C/F\00a0";
+}
+
+td.cpcfiF>span, label#showFI {
+    background-color: #FFFFB5;
+}
+
+td.cpcfiF>span::before {
+    content: "\00a0 F\00a0";
+}
+
+td.cpc, a.cpc, td.fC>span {
+    background-color: #FFCE8F;
+    border-color: #ACACF3;
+    font-size: 1.4rem;
+}
+td.fi, a.fi, td.fF>span {
+    background-color: #FFFFB5;
+    border-color: #F1F14F;
+    font-size: 1.4rem;
+}
+/*div.cpc, div.fi {
+    display: none;
+}*/
+
+/* overriding ui.fancytree.css CSS rules: */
+ul.fancytree-container ul {
+    padding: 0 0 0 0;
+}
+ul.fancytree-container li {
+    list-style: none inside none;
+}
+span.fancytree-title {display: none;}
+
+div.tab-content {
+    overflow: visible;
+}
+
+/* RCL */
+
+.rclNew, th.rclOld {
+    padding-left: 5px;
+}
+
+th.rclOld {
+    background-color: red;
+    color: white;
+}
+
+td.rclOld, td.rclOld a, td.rclOld span.fancytree-title,
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.rclOld,
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.rclOld * {
+    font-size: 1.4rem;
+    background-color: #FFCFCF;
+    color: red;
+}
+
+/* Hovered RCL-old cell text color */
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr:hover.fancytree-active > td.rclOld,
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr:hover.fancytree-active > td.rclOld *,
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.rclOld,
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.rclOld * {
+    background-color: #EFBFBF;
+}
+
+th.rclNew {
+    background-color: green;
+    color: white;
+}
+
+td.rclNew, td.rclNew a, td.rclNew span.fancytree-title,
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.rclNew,
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.rclNew * {
+    font-size: 1.4rem;
+    background-color: #CFFFCF;
+    color: green;
+}
+
+/* Hovered RCL-new cell text color */
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.rclNew,
+table#rcltree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.rclNew * {
+    background-color: #BFEFBF;
+}
+
+/* SCHEME */
+
+/* Hovered cell text color */
+td.i tr:hover>td,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td.sg > div.txt,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover.fancytree-active > td>a.symbol,
+table#schemetree.fancytree-ext-table.fancytree-container > tbody > tr:hover > td>a.symbol {
+    background-color: #CFD1D0;
+}
+
+/* Selectd IPC Symbol row text color */
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td span.fancytree-title {
+    color: inherit;
+    background-color: transparent;
+}
+
+/* Selectd IPC Symbol cell text color */
+td>a.symbol.current, td>div>span.current {
+    color: #72b905;
+    font-weight: bold;
+}
+
+td.symbol {
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+ /************************************************/
+/* Symbol virtual keypad and results pagination */
+
+span.k09, span.kIZ, span.slash, div.keypad {
+    display: none;
+}
+
+div.keypad {
+    text-align: left;
+    padding: 3px 0px 3px 3px;
+    margin-bottom: 5px;
+    background-color: #D0D6E5;
+}
+
+div.keypad>span>a {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.4rem;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 30px;
+    max-width: 30px;
+    max-height: 22px;
+    min-height: 22px;
+    padding: 0px 0px 0px 0px;
+    background-color: #405176;
+    margin: 5px 5px 0px 0px;
+    color: #FAFAFA;
+    text-align: center;
+    cursor: pointer;
+}
+
+ /*****************************/
+/* Search results pagination */
+
+div.pg>a {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 30px;
+    max-width: 30px;
+    max-height: 20px;
+    min-height: 20px;
+    padding: 4px 0px 0px 0px;
+    background-color: #405176;
+    margin: 5px 5px 0px 0px;
+    color: #FAFAFA;
+    text-align: center;
+}
+
+ /******************************/
+/* Highlighting search result */
+
+.hl {
+    background-color: #A1C8AD;
+}
+
+td>div>span.hl, td>div>span>span.hl {
+    font: inherit;
+}
+
+ /**************/
+/* Catchwords */
+
+div#catchword {
+    max-width: 600px;
+}
+
+table#catchwordtree.fancytree-ext-table.fancytree-treefocus.fancytree-container * tr > td,
+table#catchwordtree.fancytree-ext-table.fancytree-container * tr > td {
+    background-color:inherit;
+    color: inherit;
+}
+
+/* Hovered cell text color */
+table#catchwordtree.fancytree-ext-table.fancytree-container * tr:hover.fancytree-active > td.r,
+table#catchwordtree.fancytree-ext-table.fancytree-container * tr:hover > td.r {
+    background-color: #CFD1D0;
+}
+
+/* Letter row cell background and text color */
+table#catchwordtree.fancytree-ext-table.fancytree-treefocus.fancytree-container * tr > td.l,
+table#catchwordtree.fancytree-ext-table.fancytree-container * tr > td.l {
+    border-top: 5px solid #FAFAFA;
+    background-color: #DAB2B1;
+    color: black;
+}
+
+table#catchwordtree> * td {
+    font-size: 1.4rem;
+}
+
+table#catchwordtree> * td>div {
+    margin-top: 10px;
+}
+
+table#catchwordtree> * td>div>span {
+    font-weight: bold;
+}
+
+table#catchwordtree> * div>div {
+    margin-left: 30px;
+}
+
+ /***************/
+/* Definitions */
+
+em {
+    text-decoration: underline;
+    font-style: inherit;
+}
+
+td.f * {
+    margin-bottom: 0px;
+    font-size: 1.4rem;
+}
+
+td.f,
+table.fancytree-ext-table.fancytree-treefocus.fancytree-container > tbody > tr.fancytree-active > td.f,
+table.fancytree-ext-table.fancytree-container > tbody > tr.fancytree-active > td.f {
+    background-color: #DDEAE1;
+}
+
+td.f>p.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 8px;
+    }
+
+td.f>p.subtitle {
+    font-size: 1.5rem;
+    background-color: #A1C8AD;
+    font-weight: bold;
+    margin-top: 8px;
+    }
+
+td.f>p.label {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+td.f>p.sublabel {
+    margin-top: 8px;
+    font-style: italic;
+}
+
+td.f>div>p {
+    margin-top: 8px;
+}
+
+.casetitle {
+    font-weight: bold;
+    margin-top: 10pt;
+    }
+
+.lrgsubjtitle {
+    font-weight:bold;
+    padding-top:8px;
+    text-decoration:underline;
+}
+
+.reftbltitle {
+    font-style:italic;
+    text-decoration:underline;
+    padding-top: 8px;
+}
+
+td.f * ul {
+    margin-left: 16px;
+    padding-left: 0;
+    list-style-position:inside;
+    list-style-type:disc;
+    }
+
+td.f * li {
+    margin-top:2px;
+    padding:0 0 0 16px;
+    text-indent:-16px;
+    }
+
+td.f>div>p.subparagraph {
+    margin-top: .25em;
+    margin-left: 1em;
+    text-indent: -1em;
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+td.f>div>table, td.f>table {
+    table-layout: auto;
+    width: 95%;
+}
+
+td.f * *.emphasis, span.emphasis {
+    text-decoration: underline;
+}
+
+ /***************************/
+/* Icons and tree expander */
+
+span.fancytree-node {
+    margin-right: 5px;
+}
+
+td.icons {
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+a.icon.def, a.icon.pdf {
+    display: inline-block;
+}
+
+a.icon, span.fancytree-expander, .fancytree-expanded span.fancytree-expander{
+    vertical-align: middle;
+    min-width: 30px;
+    max-width: 30px;
+    max-height: 20px;
+    min-height: 20px;
+    padding: 0px 0px 0px 0px;
+    background-color: #405176;
+    margin: 0px 3px 0px 0px;
+    font-size: 1rem;
+    color: #FAFAFA;
+    text-align: center;
+}
+td.refine>span.fancytree-node>span.fancytree-expander {
+    min-width: 15px;
+    max-width: 15px;
+    background-color: #FAFAFA;
+    color: #405176;
+    margin: 0px 0px 0px 0px;
+}
+
+span.noExpander, td.g * span.fancytree-expander, td.t * span.fancytree-expander,
+td.g > span.fancytree-node, td.t > span.fancytree-node {
+    display: none;
+}
+
+div#termContents, div#bridgeContents {
+    overflow: auto;
+}
+
+#BridgeModalTitleLabel>span {
+    font: inherit;
+}
+
+div#termContents>p {
+    margin: 0px;
+}
+
+ /***************/
+/* Compilation */
+
+/* Inserted texts: */
+ins, ins>a {
+    background: inherit;
+    color: green;
+    font-style: italic;
+    text-decoration: none;
+}
+
+/* Inserted dots: */
+div.lvl.ins>div {
+    background: #A1C8AD;
+    text-decoration: none;
+}
+
+/* Deleted texts: */
+del, del>a {
+    color: red;
+    text-decoration: line-through;
+}
+
+/* Deleted dots: */
+div.lvl.del>div {
+    background: #DAB2B1;
+    text-decoration: none;
+}
+
+.accordion__heading .accordion__toggle {
+    padding: 5px 0;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+
+ /************/
+/* Warnings */
+
+td.w>* {
+    font-size: 1.4rem;
+    color: #A23B39;
+    font-weight: bold;
+}
+
+td.w.l1>*, td.w.l2>* {
+    background-color: #CFD1D0;
+}
+a.icon.ss-alert.ipcwarn::before, a.icon.ss-alert.ipcwarn  {
+    display: inline-block;
+    background-color: #A23B39;
+}
+
+#statsResult, #ipccatResult, #search-results div div.box {
+    max-width: 240px;
+    al
+}
