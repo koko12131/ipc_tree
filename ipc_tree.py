@@ -80,9 +80,8 @@ def file_name_tree_list_f(input_path):
             file_name_tree_list.append(k)
     return file_path_list,file_name_tree_list
 
-def main():
-    input_path = r'C:\Users\bandk\Downloads\Compressed\en_20200101_html'
-    output_path = r'C:\Users\bandk\Desktop\ipc_tree'
+def main(input_path,output_path):
+
     file_path_list,file_name_tree_list = file_name_tree_list_f(input_path)
     outCSV(os.path.join(output_path, 'ipc4_upper'), file_name_tree_list)
     for x in file_path_list:
@@ -92,7 +91,9 @@ def main():
         outCSV(os.path.join(output_path,ipc4),ipc_tree_list)
 
 if __name__ == '__main__':
-    main()
+    input_path = input("输入html文件路径")
+    output_path = input("输入文件保存路径")
+    main(input_path,output_path)
 
 
 
